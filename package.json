@@ -1,6 +1,6 @@
 {
-  "name": "vue-infinite-loading",
-  "version": "2.4.5",
+  "name": "@bazumax/vue-infinite-loading",
+  "version": "2.4.6",
   "description": "An infinite scroll plugin for Vue.js",
   "main": "dist/vue-infinite-loading.js",
   "typings": "types/index.d.ts",
@@ -123,5 +123,11 @@
     "dist",
     "test/unit/coverage",
     "scripts"
-  ]
+  ],
+  "dependencies": {
+    "@ivanv/vue-collapse-transition": "^1.0.2"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
 }

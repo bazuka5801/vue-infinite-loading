@@ -1,13 +1,15 @@
 <template>
   <div class="infinite-loading-container">
-    <div
-      class="infinite-status-prompt"
-      v-show="isShowSpinner"
-      :style="slotStyles.spinner">
-      <slot name="spinner" v-bind="{ isFirstLoad }">
-        <spinner :spinner="spinner" />
-      </slot>
-    </div>
+    <collapse-transition>
+      <div
+        class="infinite-status-prompt"
+        v-show="isShowSpinner"
+        :style="slotStyles.spinner">
+        <slot name="spinner" v-bind="{ isFirstLoad }">
+          <spinner :spinner="spinner" />
+        </slot>
+      </div>
+    </collapse-transition>
     <div
       class="infinite-status-prompt"
       :style="slotStyles.noResults"
@@ -50,6 +52,7 @@
   </div>
 </template>
 <script>
+import { CollapseTransition } from '@ivanv/vue-collapse-transition';
 import Spinner from './Spinner.vue';
 import config, {
   evt3rdArg, WARNINGS, STATUS, SLOT_STYLES,
@@ -71,6 +74,7 @@ export default {
   },
   components: {
     Spinner,
+    CollapseTransition,
   },
   computed: {
     isShowSpinner() {
